@@ -21,13 +21,8 @@ on:
 jobs:
   build:
     name: Build with cache job
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
-    - name: Enable long paths in Git
-      run: git config --system core.longpaths true
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup Java and cache
