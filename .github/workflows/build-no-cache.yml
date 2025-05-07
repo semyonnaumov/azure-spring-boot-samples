@@ -26,6 +26,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     steps:
+    - name: Enable long paths in Git
+      run: git config --system core.longpaths true
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup Java
